@@ -1,0 +1,46 @@
+{
+  "root": true,
+  "project": {
+    "name": "off-nominal-discord-cms"
+  },
+  "api": {
+    "projectId": "i40n3rpd",
+    "dataset": "production"
+  },
+  "plugins": [
+    "@sanity/base",
+    "@sanity/default-layout",
+    "@sanity/default-login",
+    "@sanity/desk-tool"
+  ],
+  "env": {
+    "development": {
+      "plugins": ["@sanity/vision"]
+    }
+  },
+  "parts": [
+    {
+      "name": "part:@sanity/base/schema",
+      "path": "./schemas/schema"
+    }
+  ],
+  "__experimental_spaces": [
+    {
+      "name": "production",
+      "title": "Prod",
+      "default": true,
+      "api": {
+        "projectId": "i40n3rpd",
+        "dataset": "production"
+      }
+    },
+    {
+      "name": "dev",
+      "title": "Dev",
+      "api": {
+        "projectId": "i40n3rpd",
+        "dataset": "dev"
+      }
+    }
+  ]
+}
